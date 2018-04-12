@@ -39,10 +39,6 @@ map<int, int> reducer(VectorRes& mapped_list)
         }
     }
     return res;
-    // for(auto x: res)
-    // {
-    //     cout << x.first << "=>" << x.second << endl;
-    // }
 }
 
 void print_mapper_res(auto mapped_list)
