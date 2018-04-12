@@ -74,7 +74,7 @@ int main()
     //map part
     future<MapRes> t[n];
     unsigned part = arr.size() / n;
-
+    cout << "Number of mappers = " << n << endl;
     for(int i = 0; i < n; ++ i)
     {
         int start = i * part;
@@ -102,6 +102,7 @@ int main()
     auto begin = vect.begin();
     auto end = vect.end();
     int map_part = 3;
+    cout << "Number of reducers = " << n << endl;
     for(int i = 0; i < 3; i++)
     {
         VectorRes partial(begin, begin + map_part);
@@ -114,6 +115,7 @@ int main()
     VectorRes partial(begin, end);
     pool[3] = async(reducer, ref(partial));
 
+    cout << "Final result" << endl;
     map<int, int> fin;
     for(int i = 0; i < n; ++ i)
     {
